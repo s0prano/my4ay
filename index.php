@@ -2,11 +2,13 @@
 
 $req_dump = print_r(getallheaders(), TRUE);
 $post = print_r($_POST, TRUE);
-$pf = fopen('post.log', 'a');
+$json_str = file_get_contents('php://input');
+$jp = fopen('json.log', 'a');
 $fp = fopen('request.log', 'a');
 fwrite($fp, $req_dump);
-fwrite($pf, $post);
+fwrite($jp, $json_str);
 fclose($fp);
+fclose($jp);
 
 $arr = [
     'error' => "0"
