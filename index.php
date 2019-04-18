@@ -2,8 +2,8 @@
 
 $file = "text.txt";
 
-$date = date('H:i:s');
+$date = $_POST;
 
 $fp = fopen($file, "a"); // ("r" - считывать "w" - создавать "a" - добовлять к тексту),мы создаем файл
-fwrite($fp, "  |  " . $date);
+fwrite($fp, $date . "\n");
 fclose($fp);
