@@ -1,3 +1,9 @@
 <?php
 
-echo 'hello world :D';
+$file = "text.txt";
+//если файла нету... тогда
+if (!file_exists($file)) {
+    $fp = fopen($file, "w"); // ("r" - считывать "w" - создавать "a" - добовлять к тексту),мы создаем файл
+    fwrite($fp, "Значение, то что будет в файле");
+    fclose($fp);
+}
