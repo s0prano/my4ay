@@ -1,8 +1,7 @@
 <?php
 
 $req_dump = print_r(getallheaders(), TRUE);
-$post = print_r($_POST, TRUE);
-$json_str = json_decode(file_get_contents('php://input'), true);
+$json_str = print_r(file_get_contents('php://input'), TRUE);
 $jp = fopen('json.log', 'a');
 $fp = fopen('request.log', 'a');
 fwrite($fp, $req_dump);
